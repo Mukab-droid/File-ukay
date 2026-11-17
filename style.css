@@ -10,9 +10,9 @@ body {
   color: #F3F4F6;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 1100px; /* Widened for desktop layout */
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
 /* Header Navbar */
@@ -24,21 +24,21 @@ body {
   gap: 20px;
   color: #FFFFFF;
   border-radius: 12px;
-  padding: 12px 20px;
+  padding: 16px 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .top img {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .top h1 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.5px;
   flex-grow: 1;
@@ -48,8 +48,8 @@ body {
   background: linear-gradient(135deg, #0FE5F1, #0099ff);
   color: #0b0d19;
   font-weight: 700;
-  font-size: 15px;
-  padding: 10px 24px;
+  font-size: 16px;
+  padding: 12px 28px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -63,24 +63,54 @@ body {
 
 /* Main Headings */
 h2 {
-  font-size: 26px;
-  margin: 20px 0 16px 0;
+  font-size: 32px;
+  margin: 25px 0 20px 0;
   color: #ffffff;
   font-weight: 700;
+  text-align: center;
 }
 
 h3 {
   color: #0FE5F1;
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-/* Separated Info Cards */
+/* Desktop Grid for Info Sections */
+/* This automatically groups your info divs into a neat 2-column layout on desktop */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grouping the 4 info sections into a 2-column grid */
+.info-section:nth-of-type(1),
+.info-section:nth-of-type(2),
+.info-section:nth-of-type(3),
+.info-section:nth-of-type(4) {
+  display: inline-block;
+}
+
+/* We can wrap them conceptually using a grid structure via CSS */
+@media (min-width: 768px) {
+  /* Creating a container effect for the info sections using CSS grid alignment */
+  .info-section {
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    min-height: 160px;
+  }
+  
+  .info-section:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+
 .info-section {
   background-color: rgba(26, 31, 56, 0.7);
   border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
+  padding: 22px;
   border: 1px solid rgba(75, 59, 146, 0.3);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -93,12 +123,13 @@ h3 {
 
 /* Tip Box */
 .tip {
+  clear: both; /* Clears the floated info boxes */
   background: linear-gradient(135deg, rgba(30, 20, 50, 0.8), rgba(20, 35, 50, 0.8));
-  margin: 16px 0;
-  padding: 18px;
+  margin: 20px 0;
+  padding: 22px;
   border-radius: 12px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   border-left: 4px solid #0FE5F1;
   border: 1px solid rgba(140, 82, 255, 0.2);
 }
@@ -106,10 +137,10 @@ h3 {
 /* Feature & Guide Section */
 .feature {
   background-color: rgba(28, 45, 75, 0.5);
-  padding: 22px;
-  margin-top: 16px;
+  padding: 30px;
+  margin-top: 20px;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 17px;
   border: 1px solid rgba(45, 159, 229, 0.3);
 }
 
@@ -118,12 +149,12 @@ h3 {
   display: inline-block;
   background: linear-gradient(135deg, #0FE5F1, #2DDFFF);
   color: #0b0d19;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  padding: 10px 28px;
+  padding: 12px 36px;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 12px;
+  margin-top: 15px;
   box-shadow: 0 4px 15px rgba(45, 223, 255, 0.3);
   transition: transform 0.2s ease;
 }
@@ -135,12 +166,13 @@ h3 {
 /* Bottom Highlight Banner */
 .bt {
   background: linear-gradient(135deg, #d1c9ef, #b2a4dc);
-  padding: 16px;
+  padding: 20px;
   border-radius: 12px;
   color: #0b0d19;
   font-weight: 600;
   text-align: center;
-  margin: 24px 0;
+  font-size: 18px;
+  margin: 30px 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -148,10 +180,11 @@ h3 {
 footer {
   text-align: center;
   color: #9CA3AF;
-  font-size: 14px;
-  margin-top: 30px;
+  font-size: 15px;
+  margin-top: 40px;
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  clear: both;
 }
 
 footer a {
